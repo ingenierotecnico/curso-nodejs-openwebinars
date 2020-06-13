@@ -9,7 +9,7 @@ app.disable('x-powered-by')
 
 app.set('env', 'development')
 
-app.use(logger('combined'))
+app.use(logger('tiny'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -17,10 +17,10 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
-  res.render('home')
-  // res.render('homeVars', { title: 'Open Webinars!', message: 'Curso NodeJS!' })
+  res.setHeader("Reponse",200)
+  res.render('homeVars', { title: 'Open Webinars!', message: 'Cursos NodeJS!', tonteria: 'Mi tonteria' })
 })
 
 app.listen('9000', () => {
-  console.log('Server opened listen on http://localhost:9000')
+  console.log('Server opened listening on http://localhost:9000')
 })
