@@ -44,7 +44,7 @@ app.use(
 
 
 app.use((req, res, next) => {
-  res.render('404', {
+  res.status(404).render('404', {
     title: 'Open Webinars',
     message: `La ruta no existe!!!!!`
   })
